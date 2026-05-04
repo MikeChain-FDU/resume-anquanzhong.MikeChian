@@ -3,6 +3,7 @@ export default async function handler(req, res) {
     return res.status(200).json({ text: '🔴 接口连通正常，请使用 POST 方法。' });
   }
 
+  // 1. 获取你的中转 API Key
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
     return res.status(200).json({ text: '🔴 服务器未配置 API Key。' });
@@ -11,34 +12,51 @@ export default async function handler(req, res) {
   const { contents, systemInstruction } = req.body;
 
   try {
-    // 💡 提取前端的人设文本
+    // 2. 提取系统提示词 (System Prompt)
     const systemPromptText = systemInstruction?.parts?.[0]?.text || "你是候选人的AI分身。";
-    
-    // 🧠 核心稳定机制：将人设作为对话的第一轮，彻底抛弃容易报错的 systemInstruction 结构
-    const robustContents = [
-      { role: "user", parts: [{ text: systemPromptText }] },
-      { role: "model", parts: [{ text: "明白，我已经准备好作为算法科学家的数字分身，解答任何关于简历和底层逻辑的问题。" }] },
-      ...contents
+
+    // 3. 核心转换：将前端传来的 Gemini 格式，翻译成中转 API 需要的 OpenAI 格式
+    const messages = [
+      { role: "system", content: systemPromptText } // 注入人设
     ];
 
-    // 🚀 核心修复：完全对齐 2026 年最新的 Google API Quickstart 官方标准，使用最新模型
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-    
+    if (contents && Array.isArray(contents)) {
+      contents.forEach(msg => {
+        // OpenAI 的角色是 user 和 assistant，需要转换
+        const role = msg.role === "model" ? "assistant" : "user";
+        const text = msg.parts?.[0]?.text || "";
+        if (text) {
+          messages.push({ role: role, content: text });
+        }
+      });
+    }
+
+    // 4. 使用指南中提供的中转 API 地址 (必须加上 /chat/completions)
+    const url = "https://new.lemonapi.site/v1/chat/completions";
+
     const response = await fetch(url, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        // OpenAI 标准的鉴权方式：Bearer Token
+        'Authorization': `Bearer ${apiKey}` 
+      },
       body: JSON.stringify({
-        contents: robustContents 
+        // 严格按照指南，带上 [L] 前缀的模型名
+        model: "[L]gemini-3-flash-preview", 
+        messages: messages,
+        stream: false // 严格按照指南：关闭流式输出
       })
     });
 
     const data = await response.json();
     
     if (!response.ok) {
-        return res.status(200).json({ text: `🔴 Google 接口报错: ${data.error?.message || '未知错误'}` });
+        return res.status(200).json({ text: `🔴 中转接口报错: ${data.error?.message || '未知错误'}` });
     }
 
-    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    // 5. 按照 OpenAI 的格式解析返回的文字
+    const aiText = data.choices?.[0]?.message?.content;
     res.status(200).json({ text: aiText || '🔴 模型未返回文字。' });
 
   } catch (error) {
