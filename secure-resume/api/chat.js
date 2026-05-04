@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     ];
 
     // 🚀 核心修复：完全对齐 2026 年最新的 Google API Quickstart 官方标准，使用最新模型
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
     
     const response = await fetch(url, {
       method: 'POST',
