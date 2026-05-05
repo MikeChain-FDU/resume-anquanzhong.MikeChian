@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>数学建模顾问（底层算法把关） - 专业简历</title>
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- MathJax for rendering math formulas -->
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
@@ -17,9 +14,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#1e3a8a', // Deep Blue (Rigorous/Math)
-                        secondary: '#0ea5e9', // Light Blue (Tech/Data)
-                        accent: '#10b981', // Emerald (Life/Safety)
+                        primary: '#1e3a8a', // Deep Blue
+                        secondary: '#0ea5e9', // Light Blue
+                        accent: '#5c9e97', // Celadon Green
                         dark: '#1e293b',
                         light: '#f8fafc'
                     },
@@ -34,16 +31,11 @@
         body { background-color: #f1f5f9; }
         .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
         .card-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
-        
-        /* 针对 PDF 导出的专用打印样式优化 */
         @media print {
             body { background-color: white !important; }
             .shadow-xl, .shadow-sm, .shadow-md { box-shadow: none !important; border: 1px solid #e2e8f0 !important; }
-            /* 防止核心模块和卡片在跨页时被从中间切断 */
             section, .border-slate-200, .bg-light, .flex { page-break-inside: avoid; break-inside: avoid; }
-            /* 打印时隐藏 AI 悬浮按钮和对话框 */
             #ai-widget-button, #ai-chat-panel { display: none !important; }
-            /* 移除页面外边距以适应 A4 纸 */
             .max-w-5xl { max-width: 100% !important; margin-top: 0 !important; }
             header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
         }
@@ -62,7 +54,7 @@
                 <h1 class="text-4xl font-bold tracking-tight mb-2">首席数学建模顾问 <span class="text-secondary-200 font-light text-3xl opacity-80">|</span> 算法科学家</h1>
                 <div class="mt-6 inline-flex items-center bg-white/20 backdrop-blur-sm px-5 py-3 rounded-lg border border-white/30">
                     <i class="fas fa-quote-left text-accent mr-3 text-xl"></i>
-                    <p class="text-lg font-medium tracking-wide">将严谨的数学理论转化为守护生命的智能逻辑。</p>
+                    <p class="text-lg font-medium tracking-wide">将严谨的数学理论转化为守护生命与赋能商业的智能逻辑。</p>
                 </div>
             </div>
         </header>
@@ -100,7 +92,7 @@
                             <i class="fas fa-university w-6 text-center mr-2"></i> 产学研生态构建
                         </h3>
                         <p class="text-sm text-slate-600 leading-relaxed text-justify">
-                            推动业务数据与<span class="font-semibold text-accent">复旦大学、香港中文大学</span>等顶尖高校实验室联合进行科学研究，不仅能获取项目科研经费，更能为项目带来顶尖学术资源<span class="whitespace-nowrap">与行业声誉</span>
+                            推动业务数据与<span class="font-semibold text-accent">顶尖高校实验室</span>联合进行科学研究，不仅能获取项目科研经费，更能为项目带来前沿学术资源<span class="whitespace-nowrap">与行业声誉</span>
                         </p>
                     </div>
                 </div>
@@ -160,13 +152,13 @@
                 </div>
             </section>
 
-            <!-- Project Experience -->
+            <!-- Technical Support Capabilities & Talking Points (REWRITTEN) -->
             <section>
                 <div class="flex items-center mb-6">
                     <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary mr-4">
-                        <i class="fas fa-briefcase text-xl"></i>
+                        <i class="fas fa-puzzle-piece text-xl"></i>
                     </div>
-                    <h2 class="text-2xl font-bold text-dark">项目经验</h2>
+                    <h2 class="text-2xl font-bold text-dark">核心算法赋能与业务转化</h2>
                 </div>
 
                 <div class="bg-white border border-slate-200 rounded-xl p-8 relative overflow-hidden shadow-sm hover:shadow-md transition-shadow">
@@ -174,16 +166,12 @@
                     
                     <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
                         <div>
-                            <h3 class="text-xl font-bold text-dark mb-1">「安全钟」主动式AI个人安全管家</h3>
+                            <h3 class="text-xl font-bold text-dark mb-1">面向复杂业务场景的底层算法解决方案</h3>
                             <div class="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-primary text-sm font-semibold border border-blue-100">
-                                <i class="fas fa-user-tie mr-2"></i> 核心算法与理论建模顾问
+                                <i class="fas fa-cogs mr-2"></i> 通用化技术赋能矩阵
                             </div>
                         </div>
                     </div>
-
-                    <p class="text-slate-500 text-sm mb-6 pb-4 border-b border-slate-100">
-                        <i class="fas fa-star text-amber-400 mr-2"></i><span class="font-semibold text-slate-700">项目核心职责与贡献：</span>
-                    </p>
 
                     <div class="space-y-8">
                         <!-- Module 1 -->
@@ -193,18 +181,18 @@
                                     <i class="fas fa-network-wired text-sm"></i>
                                 </div>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-base font-bold text-slate-800 mb-2">1. 多模态数据融合决策层设计 <span class="text-xs font-normal text-slate-400 ml-2">(感知与决策的数学映射)</span></h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
+                            <div class="ml-4 w-full">
+                                <h4 class="text-base font-bold text-slate-800 mb-2">1. 多源数据融合引擎 <span class="text-xs font-normal text-slate-400 ml-2">(破除信息孤岛，告别盲目决策)</span></h4>
+                                <ul class="space-y-2 text-sm text-slate-600 mb-3">
                                     <li class="flex items-start">
                                         <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">架构设计：</strong>针对产品需要同时处理 GPS 偏航、加速度突变及环境音特征的需求，主导设计了多源信息融合概率模型<span class="whitespace-nowrap">（贝叶斯融合架构）</span></span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">动态抗噪：</strong>建立数学映射，实时计算并更新用户处于危险状态的后验概率 <span class="bg-slate-100 px-1 rounded font-mono text-primary text-xs">\(P(\text{Danger} | \text{Sensors})\)</span>。引入动态权重分配机制，屏蔽单一传感器噪声，<span class="whitespace-nowrap">提升鲁棒性</span></span>
+                                        <span><strong class="text-slate-700">技术支撑：</strong>基于贝叶斯概率架构，针对多源异构数据（如多维度传感器、复杂业务日志）设计融合推断模型。通过交叉验证动态分配特征权重，强效屏蔽单一维度的脏数据与环境噪音。</span>
                                     </li>
                                 </ul>
+                                <div class="bg-slate-50 border-l-2 border-secondary p-3 rounded-r-lg text-sm">
+                                    <strong class="text-secondary"><i class="fas fa-comment-dots mr-1"></i> 对客/汇报话术：</strong>
+                                    <span class="text-slate-600 italic">“业务上最怕‘数据互相打架’导致瞎报警。我的算法相当于给系统装了一个‘精算师大脑’，它能把零碎的线索缝合起来交叉验证。就算某个指标突然抽风，系统也能稳住，用精确的概率说话，彻底解决误判难题。”</span>
+                                </div>
                             </div>
                         </div>
 
@@ -215,22 +203,18 @@
                                     <i class="fas fa-user-clock text-sm"></i>
                                 </div>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-base font-bold text-slate-800 mb-2">2. 千人千面的动态安全基线构建 <span class="text-xs font-normal text-slate-400 ml-2">(行为识别与预测)</span></h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
+                            <div class="ml-4 w-full">
+                                <h4 class="text-base font-bold text-slate-800 mb-2">2. 动态基线与趋势预测 <span class="text-xs font-normal text-slate-400 ml-2">(打破死板规则，实现主动防御)</span></h4>
+                                <ul class="space-y-2 text-sm text-slate-600 mb-3">
                                     <li class="flex items-start">
                                         <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">打破阈值限制：</strong>摒弃传统的“单一阈值”判定规则，针对不同群体（老人、青年）行为差异，<span class="whitespace-nowrap">构建动态安全基线模型</span></span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">个体化特征学习：</strong>利用时间序列模型学习用户日常活动的概率分布，<span class="whitespace-nowrap">实现个体化基线学习</span></span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">风险预测：</strong>实时计算行为对基线的“异常偏离度”，基于马尔可夫链 (Markov Chain) 构建“失联预测模型”，实现风险的<span class="whitespace-nowrap">提前预知干预</span></span>
+                                        <span><strong class="text-slate-700">技术支撑：</strong>彻底摒弃静态的“阈值硬编码”。运用时间序列与马尔可夫链 (Markov Chain)，精准刻画独立主体的常态行为分布。实时计算风险偏离度，实现从“事后触发”向“事中预测”的转化。</span>
                                     </li>
                                 </ul>
+                                <div class="bg-slate-50 border-l-2 border-secondary p-3 rounded-r-lg text-sm">
+                                    <strong class="text-secondary"><i class="fas fa-comment-dots mr-1"></i> 对客/汇报话术：</strong>
+                                    <span class="text-slate-600 italic">“死规则管不住活业务。我做的不是一刀切的红线，而是‘千人千面’的动态防线。算法会记住每个用户的正常习惯，一旦苗头不对立马预警。把业务逻辑从‘事后擦屁股’变成‘事前防微杜渐’。”</span>
+                                </div>
                             </div>
                         </div>
 
@@ -241,22 +225,18 @@
                                     <i class="fas fa-sliders-h text-sm"></i>
                                 </div>
                             </div>
-                            <div class="ml-4">
-                                <h4 class="text-base font-bold text-slate-800 mb-2">3. 误报率优化与端侧推理极致压榨 <span class="text-xs font-normal text-slate-400 ml-2">(策略博弈)</span></h4>
-                                <ul class="space-y-2 text-sm text-slate-600">
+                            <div class="ml-4 w-full">
+                                <h4 class="text-base font-bold text-slate-800 mb-2">3. 决策博弈与端侧算力榨取 <span class="text-xs font-normal text-slate-400 ml-2">(极致的成本与体验平衡术)</span></h4>
+                                <ul class="space-y-2 text-sm text-slate-600 mb-3">
                                     <li class="flex items-start">
                                         <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">I/II 类错误权衡：</strong>引入信号检测论，系统性寻找漏报与误报的最佳平衡点。在最大化救助可能性的同时，将扰民率 (False Alarm Rate) <span class="whitespace-nowrap">降至极低</span></span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">分级决策机制：</strong>根据风险概率的置信区间，建立“红色协议分级逻辑”，实现不同级别确认流程的<span class="whitespace-nowrap">自动触发</span></span>
-                                    </li>
-                                    <li class="flex items-start">
-                                        <i class="fas fa-check-circle text-accent mt-1 mr-2 text-xs"></i>
-                                        <span><strong class="text-slate-700">端侧算力优化：</strong>针对边缘计算瓶颈，对核心模型进行低秩分解与量化优化，不牺牲精度的前提下<span class="whitespace-nowrap">极大提升本地计算效率</span></span>
+                                        <span><strong class="text-slate-700">技术支撑：</strong>引入信号检测论，用数学方法求解漏报/误报的最优平衡点。结合低秩分解等模型压缩手段，在不损伤核心精度的前提下，将复杂推理下放至算力匮乏的边缘侧硬件。</span>
                                     </li>
                                 </ul>
+                                <div class="bg-slate-50 border-l-2 border-secondary p-3 rounded-r-lg text-sm">
+                                    <strong class="text-secondary"><i class="fas fa-comment-dots mr-1"></i> 对客/汇报话术：</strong>
+                                    <span class="text-slate-600 italic">“产品落地往往在‘太敏感扰民’和‘太迟钝漏事’之间反复横跳。我不仅能用数学模型帮你找到这两者最舒服的平衡点，还能把庞大的算法底座‘瘦身’，塞进极低成本的硬件里流畅运行，直接替公司把服务器算力成本打下来。”</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -299,7 +279,7 @@
                     <i class="fas fa-robot text-xs"></i>
                 </div>
                 <div class="bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-700 max-w-[85%] leading-relaxed">
-                    您好！我是候选人的 AI 数字分身 ✨。您可以向我提问关于简历中提及的“贝叶斯推断”、“马尔可夫链”或者“安全钟项目”的任何细节。我也可以帮您将这些技术术语转化为通俗的业务场景。请问有什么我可以帮您的吗？
+                    您好！我是候选人的 AI 数字分身 ✨。您可以向我提问关于简历中提及的“贝叶斯推断”、“马尔可夫链”等技术细节。我能帮您将这些技术术语转化为通俗的业务话术，说明我将如何为您的项目赋能。请问有什么我可以帮您的吗？
                 </div>
             </div>
         </div>
@@ -307,7 +287,7 @@
         <!-- Input Area -->
         <div class="p-3 bg-white border-t border-slate-100">
             <form id="chat-form" onsubmit="handleChatSubmit(event)" class="relative flex items-center">
-                <input type="text" id="chat-input" placeholder="例如：用通俗的话解释安全钟项目？" class="w-full bg-slate-100 text-sm rounded-full pl-4 pr-12 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all" required autocomplete="off">
+                <input type="text" id="chat-input" placeholder="例如：你能为我们的风控业务提供什么支持？" class="w-full bg-slate-100 text-sm rounded-full pl-4 pr-12 py-3 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all" required autocomplete="off">
                 <button type="submit" id="chat-submit-btn" class="absolute right-2 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center hover:bg-secondary transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                     <i class="fas fa-paper-plane text-xs"></i>
                 </button>
@@ -316,24 +296,21 @@
     </div>
 
     <script>
-        // 核心安全修改：彻底移除明文 apiKey，所有的逻辑转向同源的安全后端代理
         let isChatOpen = false;
         const chatPanel = document.getElementById('ai-chat-panel');
         const chatMessages = document.getElementById('chat-messages');
         const chatInput = document.getElementById('chat-input');
         const submitBtn = document.getElementById('chat-submit-btn');
 
-        // 设置给大模型的系统级角色提示词
         const systemPrompt = `你现在是这份简历的候选人（首席数学建模顾问/算法科学家）的“AI数字分身”。
-你的任务是回答HR或面试官关于你经历的问题。
+你的任务是回答HR或面试官关于你技术支持能力的问题。
 回答要求：
 1. 语气自信、专业、简明扼要，使用第一人称“我”。
-2. 遇到非技术人员提问时，能够主动将复杂的数学模型（如贝叶斯、马尔可夫链、KL散度）解释为通俗易懂的商业或应用价值。
+2. 遇到非技术人员提问时，能够主动将复杂的数学模型解释为通俗易懂的商业话术（如：精算师大脑、动态防线、算力瘦身）。
 3. 严格基于以下简历背景：
 - 核心理念：坚持第一性原理构建底层模型，拒绝黑盒调参。
-- 核心优势：理论严谨、统计深度强、具备顶尖高校（如复旦大学、香港中文大学）产学研资源整合能力，能通过联合科研获取经费与项目声誉。
-- 技能：精通随机过程建模、贝叶斯推断、异常检测理论（KL散度）、流形学习降维、端侧算力最优化。
-- 核心项目：「安全钟」主动式AI个人安全管家。负责多源信息贝叶斯融合架构、基于时间序列和马尔可夫链的个体化动态安全基线预测、引入信号检测论平衡漏报误报，并进行了端侧推理低秩分解优化。`;
+- 核心优势：理论严谨、统计深度强、具备顶尖高校产学研资源整合能力。
+- 技能支持：精通多源贝叶斯架构设计（破除信息孤岛）、时间序列动态安全基线（打破死板规则）、边缘端算力极致压榨（打下算力成本）。`;
 
         let chatHistory = [];
 
@@ -361,7 +338,6 @@
                 ? 'bg-primary text-white p-3 rounded-2xl rounded-tr-none shadow-sm text-sm max-w-[85%] order-1 leading-relaxed'
                 : 'bg-white p-3 rounded-2xl rounded-tl-none shadow-sm border border-slate-100 text-sm text-slate-700 max-w-[85%] leading-relaxed';
                 
-            // 简单的 Markdown 加粗和换行处理
             let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
 
             msgDiv.innerHTML = `
@@ -400,14 +376,12 @@
             const text = chatInput.value.trim();
             if (!text) return;
 
-            // 更新 UI 状态
             chatInput.value = '';
             chatInput.disabled = true;
             submitBtn.disabled = true;
             appendMessage(text, true);
             appendLoading();
 
-            // 维护上下文对话记录
             chatHistory.push({ role: "user", parts: [{ text: text }] });
 
             const payload = {
@@ -416,7 +390,6 @@
             };
 
             try {
-                // 核心修改：请求本地服务器的 /api/chat 路径，不再直连 Google
                 const response = await fetch('/api/chat', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -432,7 +405,6 @@
                     chatHistory.push({ role: "model", parts: [{ text: aiResponseText }] });
                     appendMessage(aiResponseText, false);
                 } else {
-                    // 如果后端返回错误提示，只显示信息，不将其存入上下文
                     appendMessage(aiResponseText || "返回数据为空", false);
                     chatHistory.pop();
                 }
@@ -440,7 +412,7 @@
                 removeLoading();
                 appendMessage("<strong>连接失败</strong><br>网络请求异常，请检查服务器状态。详细信息: " + error.message, false);
                 console.error("Chat API Error:", error);
-                chatHistory.pop(); // 移除失败的记录
+                chatHistory.pop();
             } finally {
                 chatInput.disabled = false;
                 submitBtn.disabled = false;
